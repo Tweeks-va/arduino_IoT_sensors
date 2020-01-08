@@ -17,6 +17,13 @@ This is the letscodeblacksburg.org "arduino_IoT_sensors" project for intermediat
 * 6 – M/F Dupont connection wires
 * (opt) – project case, hot glue, etc
 
+## Required Workshop Documentation:
+
+* The [LCBB IoT Sensors Build Doc](LCBB_IoT_Environment_Monitor_BuildDoc.pdf)
+* The [LCBB Arduino Cookbook PDF](https://github.com/LetsCodeBlacksburg/arduino-recipes/blob/master/LCBB_Arduino_Cookbook.pdf)
+
+
+The build doc is the working document for the class (~6 pages) which relies on the sensor 
 
 All LCBB code and related materials are copy left (open sourced) under the Creative Commons (CC)(BY)(SA)[1] License.
 
