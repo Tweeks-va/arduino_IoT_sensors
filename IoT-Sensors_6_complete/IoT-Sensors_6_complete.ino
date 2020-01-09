@@ -25,7 +25,7 @@ SoftwareSerial Serial1(6, 7); // Using these pis for Software Serial RX, TX
 #endif
 
 // ESP8266 Variables
-char ssid[] = "VT_Event";        // the network SSID (name) you're connecting to
+char ssid[] = "";        // the network SSID (name) you're connecting to
 char pass[] = "";       // the network password (blank if none/open)
 int status = WL_IDLE_STATUS;            // the Wifi radio's status
 int reqCount = 0;                       // number of requests received

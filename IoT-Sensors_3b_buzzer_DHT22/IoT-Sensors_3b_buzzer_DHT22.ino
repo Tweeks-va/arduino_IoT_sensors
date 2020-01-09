@@ -6,38 +6,15 @@
 DHT dht(DHTPIN, DHTTYPE);
 const int buzzerPin = 3;           // Sound Buzzer on pin#
 
-//PIR Motion Sensor variables:
-const int calibrationTime = 10; //the time we give the sensor to calibrate (20­30sec)
-const int pirPin = 2;     //the digital pin connected to the PIR sensor's output
-const int ledPin = 13;    // the built in LED pin
-
-
 void setup() {
-  //PIR Motion Sensor Setup
-  Serial.begin(9600);
-  pinMode(pirPin, INPUT);       // Set up the various I/O pins
-  pinMode(ledPin, OUTPUT);
-  digitalWrite(pirPin, LOW);
-  //give the sensor some time to calibrate (monitor state on the serial port)
-  Serial.print("MOTION: calibrating PIR motion sensor.");
-    for(int i = 0; i < calibrationTime; i++){
-      Serial.print(".");
-      delay(1000);
-      }
-    Serial.println("");
-    Serial.println("MOTION: PIR calibraton done");
-    Serial.println("MOTION: SENSOR ACTIVE");
-    delay(50);
-  
   // DHT22 Setup
+  Serial.begin(9600);
   pinMode(buzzerPin, OUTPUT);  
   digitalWrite(buzzerPin, HIGH); 
   Serial.println("HUMIDITY: DHT22 ready...");
   dht.begin();
 
 Serial.println("=========================");
-
-  
 }
 
 // loop()
@@ -63,17 +40,6 @@ void loop() {
   buzzer("chirp");
   Serial.print("HUMIDITY: "); Serial.print(h); Serial.print(" %\t"); 
   Serial.print("Temperature: "); Serial.print(f); Serial.println(" °F");
-
-  /////////// PIR Motion Sensor Code Block
-  ////////////////////////////////////////////////////
-    if(digitalRead(pirPin) == HIGH){        // If the PIR is HIGH
-       digitalWrite(ledPin, HIGH);        // then turn on the LED pin and
-       Serial.println("MOTION: HIGH (motion)");   // print "HIGH (motion)" on serial port
-  }
-  else {
-       digitalWrite(ledPin, LOW);         // else, make the LED pin low and
-       Serial.println("MOTION: LOW (no motion)"); // print "LOW (no motion)" on serial port
-  }
 
 Serial.println("=========================");
 
